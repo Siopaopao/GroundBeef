@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class GroundBeefValueCalculator {
+    public static void main( String[] Args){
+        
+        Scanner scan = new Scanner (System.in);
+        
+        double pricePerPoundPackageA, pricePerPoundPackageB, costPerPoundA, costPerPoundB;
+        int percentLeanPackageA, percentLeanPackageB;
+        
+        System.out.print("Price per pound package A: ");
+        pricePerPoundPackageA = scan.nextDouble();
+        
+        System.out.print("Percent lean package A: ");
+        percentLeanPackageA = scan.nextInt();
+        
+        System.out.print("Price per pound package B: ");
+        pricePerPoundPackageB = scan.nextDouble();
+        
+        System.out.print("Percent lean package B: ");
+        percentLeanPackageB = scan.nextInt();
+        
+        costPerPoundA = (pricePerPoundPackageA / percentLeanPackageA) * 100;
+        costPerPoundB = (pricePerPoundPackageB / percentLeanPackageB) * 100;
+        
+        System.out.printf("Package A cost per pound of lean: %.6f\n", costPerPoundA);
+        System.out.printf("Package B cost per pound of lean: %.6f\n", costPerPoundB);
+        
+        if(costPerPoundA < costPerPoundB)
+            System.out.print("\nPackage A is the best value");
+        else
+            System.out.print("\nPackage B is the best value");
+    }
+}
